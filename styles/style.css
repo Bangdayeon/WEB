@@ -1,0 +1,20 @@
+.header{
+    background-color: rgb(157, 217, 255);
+    padding:3px;
+}
+
+.menu{
+    grid-template-columns:150px 1fr;   
+    padding: 2px;
+    margin:2px;
+    border:1px solid green;
+}
+a.elements{
+    display: block;
+    margin:2px;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -3,9 +3,20 @@
     <head>
         <title>HTML TAG</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../styles/style.css">
     </head>
     <body>
-        <h3>페이지 설명 태그들</h3>
+        <div class="header">
+            <a href="../../index.html">🏠</a>
+            <h3>페이지 설명 태그들</h3>
+        </div>
+
+        <div class="menu">
+            <a class="elements" href="page-components/html-docs/htmlPage.html">HTML</a>
+            <a class="elements" href="page-components/css-docs/cssPage.html">CSS</a>
+            <a class="elements" href="page-components/js-docs/jsPage.html">JavaScript</a>
+            <a class="elements" href="page-components/web-docs/infoPage.html">TMI</a>
+        </div>
             <ol>
                 <li>!DOCTYPE html</li>
                 <!-- 해당 문서가 html로 작성되었음을 알린다. -->
@@ -19,9 +30,11 @@
                 <!-- 웹페이지의 제목. 검색엔진이 웹페이지 분석 시 사용한다 -->
                 <li>meta</li>
                 <!-- 한글 깨짐 방지를 위해 UTF-8을 넣을 때 사용한다 -->
-                <li>div</li>
                 <li>script</li>
                 <li>style</li>
+                <!-- css 문법을 html 문서 안에 넣을 때 사용한다 -->
+                <li>link</li>
+                <!-- 다른 파일 연결할 때 head에서 사용한다 -->
             </ol>
         <h3>페이지 내용 태그들</h3>
             <ol>
@@ -30,10 +43,11 @@
                 <li>br</li>
                 <li>a</li>
                 <!-- 링크를 걸 때 사용한다. 속성 : href="[주소]" -->
-                <li>link</li>
                 <li>img<br>속성 : src, width</li>
-    
+                <li>div</li>
+                <!-- 디자인 목적으로 사용하는 의미 없는 block level 태그(grid같은 거)-->
                 <li>span</li>
+                <!-- 디자인 목적으로 사용하는 의미 없는 inline level 태그(grid같은 거)-->
                 <li>ol</li>
                 <li>ul</li>
                 <li>li</li>
