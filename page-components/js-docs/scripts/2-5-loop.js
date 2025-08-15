@@ -1,3 +1,15 @@
+const buttonActions = {
+    expectResult,
+    over100,
+    primeNumber
+};
+Object.entries(buttonActions).forEach(([id, handler]) => {
+    const btn = document.getElementById(id);
+    if (btn) {
+        btn.addEventListener("click", handler);
+    }
+});
+
 function expectResult() {
     let w_plusi = 0;
     let w_iplus = 0;
@@ -11,7 +23,6 @@ function expectResult() {
     
     alert(`while(++i < 5): ${w_plusi-1}\nwhile(i++ < 5): ${w_iplus-1}\nfor(let i=0; i<5; ++i): ${f_iplus}\nfor(let i=0; i<5; i++): ${f_iplus}\n`);
 }
-document.getElementById("expectResult").addEventListener("click", expectResult);
 
 function over100() {
     let num;
@@ -20,7 +31,6 @@ function over100() {
         if(num>100||num===''||num===null) break;
     }
 }
-document.getElementById("over100").addEventListener("click", over100);
 
 function primeNumber() {
     let num = Number(prompt("숫자를 입력해주세요: ", 0));
@@ -37,4 +47,3 @@ function primeNumber() {
     }
     alert(primes.join(", "));
 }
-document.getElementById("primeNumber").addEventListener("click", primeNumber);
