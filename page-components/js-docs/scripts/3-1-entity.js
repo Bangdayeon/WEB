@@ -3,7 +3,10 @@ const buttonActions = {
     _2,
     _3,
     _4,
-    _5
+    _5,
+    _6,
+    _7,
+    _8
 };
 Object.entries(buttonActions).forEach(([id, handler]) => {
     const btn = document.getElementById(id);
@@ -81,4 +84,66 @@ function _5() {
     multiplyNumeric(menu);
 
     alert(`origin menu: ${JSON.stringify(origin_menu)}\nmutiplyNumeric menu: ${JSON.stringify(menu)}`);
+}
+
+function _6() {
+    // function makeUser() {
+    //     return {
+    //         name: "John",
+    //         ref: this
+    //     };
+    // };
+
+    function makeUser() {
+        return {
+            name: "John",
+            ref() {
+                return this;    // 이것이 옮은 형태. user.ref()가 메서드가 되고, this는 . 앞의 객체가 됨
+            }
+        }
+    }
+
+    let user = makeUser();
+    // alert(user.ref.name);
+    alert(user.ref().name);
+    // makeUser() 내 this는 undefined가 된다.
+    // 메서드로써 호출된 게 아니라 '함수'로써 호출되었기 때문에 "함수의 현재 this값을 가져와, undefined가 됨"
+}
+
+function _7() {
+    let calculator = {
+        read: function() {
+            this.x = Number(prompt("x값: ",0));
+            this.y = Number(prompt("y값: ", 0));
+        },
+        sum: function() {
+            return (this.x + this.y);
+        },
+        mul: function() {
+            return (this.x*this.y);
+        }
+    };
+
+    calculator.read();
+    alert(`sum: ${calculator.sum()}\nmul:${calculator.mul()}`);
+}
+
+function _8() {
+    let ladder = {
+        step: 0,
+        up() {
+            this.step++;
+            return this
+        },
+        down() {
+            this.step--;
+            return this
+        },
+        showStep: function() { // 사다리에서 몇 번째 단에 올라와 있는지 보여줌
+            alert( this.step );
+            return this;
+        }
+    };
+
+    ladder.up().up().down().showStep();
 }
