@@ -6,7 +6,10 @@ const buttonActions = {
     _5,
     _6,
     _7,
-    _8
+    _8,
+    _9,
+    _10,
+    _11
 };
 Object.entries(buttonActions).forEach(([id, handler]) => {
     const btn = document.getElementById(id);
@@ -146,4 +149,48 @@ function _8() {
     };
 
     ladder.up().up().down().showStep();
+}
+
+function _9() {
+    let obj = {};
+    function A() {return obj;}
+    function B() {return obj;}
+
+    alert( new A() == new B() );
+}
+
+function _10() {
+    function Calculator() {
+        this.read = function() {
+            this.x = +prompt("x값: ",0);
+            this.y = +prompt("y값: ",0);
+        },
+        this.sum = function() {
+            return this.x+this.y;
+        },
+        this.mul = function() {
+            return this.x*this.y;
+        }
+    };
+
+    let calculator = new Calculator();
+    calculator.read();
+
+    alert( `Sum= ${calculator.sum()} \nMul= ${calculator.mul()}`);
+}
+
+function _11() {
+    function Accumulator(startingValue) {
+        this.value = startingValue;
+        this.read = function() {
+            this.value += +prompt("더할 값을 입력하세요: ",0);
+        }
+    }
+
+    let accumulator = new Accumulator(1); // 최초값: 1
+
+    accumulator.read(); // 사용자가 입력한 값을 더해줌
+    accumulator.read(); // 사용자가 입력한 값을 더해줌
+
+    alert(accumulator.value); // 최초값과 사용자가 입력한 모든 값을 더해 출력함
 }
