@@ -1,7 +1,8 @@
 const buttonActions = {
     expectResult,
     over100,
-    primeNumber
+    primeNumber,
+    _4
 };
 Object.entries(buttonActions).forEach(([id, handler]) => {
     const btn = document.getElementById(id);
@@ -46,4 +47,16 @@ function primeNumber() {
         if(isPrime) primes.push(i);
     }
     alert(primes.join(", "));
+}
+
+function _4() {
+    let current = 1;
+    let previous = 0;
+
+    for(i=1; i<=50; i++) {
+        console.log(current);
+        let temp = previous;
+        previous = current;
+        currnet = current + temp;
+    }
 }
