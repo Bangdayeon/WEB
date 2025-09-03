@@ -2,7 +2,9 @@ const buttonActions = {
     _1,
     _2,
     _3,
-    _4
+    _4,
+    _5,
+    _6
 };
 Object.entries(buttonActions).forEach(([id, handler]) => {
     const btn = document.getElementById(id);
@@ -88,4 +90,38 @@ function _4() {
     keys.push("more");
 
     alert(keys);
+}
+
+function _5() {
+    let messages = [
+        {text: "Hello", from: "John"},
+        {text: "How goes?", from: "John"},
+        {text: "See you soon", from: "Alice"}
+    ];
+
+    let checkedMessages = new WeakSet();    // 읽은 메세지를 저장하는 WeekSet
+
+    checkedMessages.add(messages[0]);   // 메세지 읽음
+    checkedMessages.add(messages[1]);   // 메세지 읽음
+    checkedMessages.add(messages[0]);   // 중복 저장 안됨(set의 특징)
+
+    alert(checkedMessages.has(messages[0]));
+
+    messages.shift();
+    // messages[0]이 삭제되었으므로 나중에 가비지 컬렉터에 의해 
+    // checkedMessages에 추가된 messages[0]도 삭제될 예정
+}
+
+function _6() {
+    let messages = [
+        {text: "Hello", from: "John"},
+        {text: "How goes?", from: "John"},
+        {text: "See you soon", from: "Alice"}
+    ];
+
+    let readMessages = new WeakMap();   // 읽은 메세지의 날짜 정보까지 저장
+
+    readMessages.set(messages[0], new Date());
+
+    alert(readMessages.get(messages[0]));
 }
