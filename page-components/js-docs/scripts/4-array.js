@@ -16,6 +16,13 @@ Object.entries(buttonActions).forEach(([id, handler]) => {
 });
 
 function _1() {
+
+    let bang = {};
+    console.log( bang && bang.address );
+    console.log(bang.address.steet);
+
+    return;
+
     let dataType = ['number', 'string', 'boolean', 'null', 'undefined', 'object'];
     
     let return_text = '';

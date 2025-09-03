@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../styles/globals.css">
+    <script src="../scripts/6-map-set.js" defer></script>
+    <title>JS Map & Set</title>
+</head>
+<body>
+    <header>
+        <a href="../../../index.html">🏠</a>
+        <h1>6 Map & Set</h1>
+    </header>
+    <body>
+        <section>
+            <h2>실습</h2>
+            <a href="https://ko.javascript.info/map-set">core js >></a>
+            <div>
+                <h3>map의 메서드</h3>
+                <span>
+                    map의 메서드들을 활용해보자
+                </span>
+                <button id="_1">실행</button>
+            </div>
+            <div>
+                <h3>배열에서 중복 요소 제거하기</h3>
+                <span>
+                    배열 arr의 중복 값을 제거하는 함수 unique(arr) 만들기
+                </span>
+                <button id="_2">실행</button>
+            </div>
+            <div>
+                <h3>애너그램 걸러내기</h3>
+                <span>
+                    애너그램(어구전철)은 단어나 문장을 구성하고 있는 문자의 순서를 바꾸어 다른 단어나 문장을 만드는 놀이입니다.<br/>
+                    e.g. nap - pan, ear - are - era<br/>
+                    애너그램으로 만든 단어를 걸러내는 함수 aclean(arr)을 만들어보세요.
+                </span>
+                <button id="_3">실행</button>
+            </div>
+            <div>
+                <h3>반복 가능한 객체의 키</h3>
+                <span>
+                    map.keys()를 사용해 배열을 반환받고, 이 배열을 변수에 저장해 .push와 같은 배열 메서드를 적용하고 싶다고 해봅시다.<br/>
+                    let map = new Map();<br/>
+                    map.set("name", "John");<br/>
+                    let keys = map.keys();<br/>
+                    // Error: keys.push is not a function<br/>
+                    keys.push("more");<br/>
+                    코드를 어떻게 고쳐야할까? <br/>
+                </span>
+                <button id="_4">실행</button>
+            </div>
+        </section>
+    </body>
+</body>
+</html>
