@@ -9,7 +9,9 @@ const buttonActions = {
     _8,
     _9,
     _10,
-    _11
+    _11,
+    _12,
+    _13
 };
 Object.entries(buttonActions).forEach(([id, handler]) => {
     const btn = document.getElementById(id);
@@ -193,4 +195,39 @@ function _11() {
     accumulator.read(); // 사용자가 입력한 값을 더해줌
 
     alert(accumulator.value); // 최초값과 사용자가 입력한 모든 값을 더해 출력함
+}
+
+function _12() {
+    function sumSalaries(salaries) {
+        let result = 0;
+        for(let i of Object.values(salaries)) {
+            result += i;
+        }
+
+        return result;
+    }
+
+    let salaries = {
+        "A": 100,
+        "B": 300,
+        "C": 250
+    };
+
+    alert(sumSalaries(salaries));
+}
+
+function _13() {
+    function count(obj) {
+        // return Object.entries(obj).length;
+        // 이렇게 작성하면 조금 더 무겁다. 불필요한 value 생성과정이 포함되기 때문이다
+        // 프로퍼티 개수 = 키 개수 이므로 키만 세는 것이 더 직관적이고 효율적임
+        return Object.keys(obj).length;
+    }
+
+    let user = {
+        name: 'John',
+        age: 30
+    };
+
+    alert(count(user));
 }
